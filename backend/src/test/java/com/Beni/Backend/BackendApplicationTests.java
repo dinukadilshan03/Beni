@@ -1,4 +1,4 @@
-package com.photography_management.backend;
+package com.Beni.Backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
