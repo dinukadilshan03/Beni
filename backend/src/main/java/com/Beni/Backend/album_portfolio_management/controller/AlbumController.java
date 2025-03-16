@@ -26,4 +26,15 @@ public class AlbumController {
             @RequestParam String status) {
         return albumService.createAlbum(name, description, images, coverImage, category, location, status);
     }
+
+    @GetMapping
+    public List<Album> getAllAlbums() {
+
+        return albumService.getAllAlbums();
+    }
+
+    @GetMapping("/getAlbum/{id}")
+    public Album getAlbum(@PathVariable String id) {
+        return albumService.getAlbumById(id);
+    }
 }

@@ -15,7 +15,7 @@ import java.util.UUID;
 public class FileStorageService {
 
     // Define the folder where images will be stored
-    private final Path rootLocation = Paths.get("uploads/images");
+    private final Path rootLocation = Paths.get("./uploads/images");
 
     public FileStorageService() {
         try {

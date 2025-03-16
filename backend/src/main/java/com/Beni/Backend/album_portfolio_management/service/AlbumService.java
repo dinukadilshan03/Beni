@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlbumService {
@@ -17,6 +18,7 @@ public class AlbumService {
     @Autowired
     private FileStorageService fileStorageService;
 
+    // Create Album Method
     public Album createAlbum(
             String name,
             String description,
@@ -41,5 +43,16 @@ public class AlbumService {
         album.setStatus(status);
 
         return albumRepository.save(album);
+    }
+
+    // Get All Albums Method
+    public List<Album> getAllAlbums() {
+        return albumRepository.findAll();
+    }
+
+    //Get A Album By ID Method
+    public Album getAlbumById(String id) {
+        return albumRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Album not found with ID: " + id));
     }
 }
