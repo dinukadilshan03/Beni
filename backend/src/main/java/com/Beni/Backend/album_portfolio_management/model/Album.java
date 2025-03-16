@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 @Document(collection = "albums")
 @Data
@@ -20,7 +21,7 @@ public class Album {
     private String id;
     private String name;
     private String description;
-    private String images;
+    private List<String> images;
     private String coverImage;
     private String category;
     private String location;
