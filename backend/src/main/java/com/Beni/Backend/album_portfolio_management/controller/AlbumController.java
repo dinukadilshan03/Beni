@@ -29,12 +29,16 @@ public class AlbumController {
 
     @GetMapping
     public List<Album> getAllAlbums() {
-
         return albumService.getAllAlbums();
     }
 
     @GetMapping("/getAlbum/{id}")
     public Album getAlbum(@PathVariable String id) {
         return albumService.getAlbumById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public boolean deleteAlbum(@PathVariable String id){
+        return albumService.deleteAlbums(id);
     }
 }

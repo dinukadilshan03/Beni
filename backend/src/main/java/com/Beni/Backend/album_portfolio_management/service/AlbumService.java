@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AlbumService {
@@ -54,5 +53,11 @@ public class AlbumService {
     public Album getAlbumById(String id) {
         return albumRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Album not found with ID: " + id));
+    }
+
+    //Delete All Albums Method
+    public boolean deleteAlbums(String id){
+        albumRepository.deleteById(id);
+        return true;
     }
 }
